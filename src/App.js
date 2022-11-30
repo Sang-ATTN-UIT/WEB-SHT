@@ -2,9 +2,10 @@ import React, { useEffect } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { FiSettings } from 'react-icons/fi';
 import { TooltipComponent } from '@syncfusion/ej2-react-popups';
+import { Home, Calendar, Kanban, ColorPicker, Editor, User, Chat, Community } from './pages';
 
 import { Navbar, Footer, Sidebar, ThemeSettings } from './components';
-import { Home, Orders, Calendar, Kanban,  ColorPicker, Editor } from './pages';
+
 import './App.css';
 
 import { useStateContext } from './contexts/ContextProvider';
@@ -66,16 +67,22 @@ const App = () => {
               <Routes>
                 {/* dashboard  */}
                 <Route path="/" element={(<Home />)} />
-                <Route path="/ecommerce" element={(<Home />)} />
+                <Route path="/home" element={(<Home />)} />
 
                 {/* pages  */}
-                <Route path="/orders" element={<Orders />} />
-
+                <Route path="/user" element={(<User />)} />
+                <Route path="/chat" element={(<Chat />)} />
+                <Route path="/community" element={(<Community />)} />
                 {/* apps  */}
                 <Route path="/kanban" element={<Kanban />} />
                 <Route path="/editor" element={<Editor />} />
                 <Route path="/calendar" element={<Calendar />} />
                 <Route path="/color-picker" element={<ColorPicker />} />
+                {/*  Error */}
+                <Route path="*" element={<h1>404</h1>} />
+                {/*  Authoryti */}
+                <Route path="/login" element={<ColorPicker />} />
+                <Route path="/register" element={<ColorPicker />} />
 
               </Routes>
             </div>

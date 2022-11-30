@@ -1,8 +1,3 @@
-import React from 'react'
-import {
-  HomeCP
-} from '../components'
-
 const styles = {
   boxWidth: "xl:max-w-[1280px] w-full",
 
@@ -30,14 +25,4 @@ const layout = {
   sectionInfo: `flex-1 ${styles.flexStart} flex-col`,
 };
 
-function HomePage() {
-  return (
-    <div className={`bg-primary ${styles.flexStart}`}>
-      <div className={`${styles.boxWidth}`}>
-        <HomeCP />
-      </div>
-    </div>
-  )
-}
-
-export default HomePage
+export default styles;
