@@ -5,10 +5,15 @@ import { Button } from '.';
 import { userProfileData } from '../data/dummy';
 import { useStateContext } from '../contexts/ContextProvider';
 import avatar from '../data/avatar.jpg';
+import { useNavigate } from "react-router-dom";
+
 
 const UserProfile = () => {
   const { currentColor } = useStateContext();
-
+  const navigate = useNavigate();
+  const GotoLogOut = () => {
+    navigate('/login');
+  };
   return (
     <div className="nav-item absolute right-1 top-16 bg-white dark:bg-[#42464D] p-8 rounded-lg w-96">
       <div className="flex justify-between items-center">
@@ -44,7 +49,7 @@ const UserProfile = () => {
               {item.icon}
             </button>
 
-            <div>
+            <div >
               <p className="font-semibold dark:text-gray-200 ">{item.title}</p>
               <p className="text-gray-500 text-sm dark:text-gray-400"> {item.desc} </p>
             </div>
@@ -58,6 +63,7 @@ const UserProfile = () => {
           text="Logout"
           borderRadius="10px"
           width="full"
+          onClick={GotoLogOut}
         />
       </div>
     </div>

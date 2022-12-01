@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { FiSettings } from 'react-icons/fi';
 import { TooltipComponent } from '@syncfusion/ej2-react-popups';
-import { Home, Calendar, Kanban, ColorPicker, Editor, User, Chat, Community } from './pages';
+import { Home, Calendar, Kanban, ColorPicker, Editor, User, Chat, Community, Login, Register } from './pages';
 
 import { Navbar, Footer, Sidebar, ThemeSettings } from './components';
 
@@ -81,8 +81,8 @@ const App = () => {
                 {/*  Error */}
                 <Route path="*" element={<h1>404</h1>} />
                 {/*  Authoryti */}
-                <Route path="/login" element={<ColorPicker />} />
-                <Route path="/register" element={<ColorPicker />} />
+                <Route path="/login" element={<Login />} />
+                <Route path="/register" element={<Register />} />
 
               </Routes>
             </div>
