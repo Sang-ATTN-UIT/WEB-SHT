@@ -2,8 +2,9 @@ import React, { useEffect } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { FiSettings } from 'react-icons/fi';
 import { TooltipComponent } from '@syncfusion/ej2-react-popups';
-import { Home, Calendar, Kanban, ColorPicker, Editor, User, Chat, Community, Login, Register } from './pages';
-
+import { Home, Calendar, Kanban, ColorPicker, Editor, User, Chat, Community } from './pages';
+import { SignIn } from "./components/auth/SignIn";
+import { SignUp } from "./components/auth/SignUp";
 import { Navbar, Footer, Sidebar, ThemeSettings } from './components';
 
 import './App.css';
@@ -81,8 +82,8 @@ const App = () => {
                 {/*  Error */}
                 <Route path="*" element={<h1>404</h1>} />
                 {/*  Authoryti */}
-                <Route path="/login" element={<Login />} />
-                <Route path="/register" element={<Register />} />
+                <Route path="/login" element={<SignIn />} />
+                <Route path="/register" element={<SignUp />} />
 
               </Routes>
             </div>
